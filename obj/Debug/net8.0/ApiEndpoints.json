@@ -1,0 +1,350 @@
+[
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.AutenticacaoController",
+    "Method": "Authenticate",
+    "RelativePath": "v1/Autenticacao/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Request.AutenticacaoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Response.AutenticacaoResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Response.DefaultResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Response.DefaultResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      }
+    ]
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.AutenticacaoController",
+    "Method": "RevokeToken",
+    "RelativePath": "v1/Autenticacao/Logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Request.RevokeTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Response.AutenticacaoResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Response.DefaultResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Response.DefaultResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      }
+    ]
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.AutenticacaoController",
+    "Method": "RefreshToken",
+    "RelativePath": "v1/Autenticacao/Refres-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Request.RefreshTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Response.AutenticacaoResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Response.DefaultResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Response.DefaultResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      }
+    ]
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.ClientesController",
+    "Method": "AtualizaCliente",
+    "RelativePath": "v1/Clientes/atualizar/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Request.ClienteRequeste",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.ClientesController",
+    "Method": "CadastroCliente",
+    "RelativePath": "v1/Clientes/cadastrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Request.ClienteRequeste",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.ClientesController",
+    "Method": "DeletaCliente",
+    "RelativePath": "v1/Clientes/deletar/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.ClientesController",
+    "Method": "GetByIdCliente",
+    "RelativePath": "v1/Clientes/lista/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Decimal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.ClientesController",
+    "Method": "GetAllCliente",
+    "RelativePath": "v1/Clientes/listar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.PedidosController",
+    "Method": "CadastroPedido",
+    "RelativePath": "v1/Pedidos/cadastrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Request.PedidosRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.PedidosController",
+    "Method": "DeletarPedido",
+    "RelativePath": "v1/Pedidos/deletar/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.PedidosController",
+    "Method": "GetByIdPedido",
+    "RelativePath": "v1/Pedidos/lista/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Decimal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.PedidosController",
+    "Method": "GetAllPedidos",
+    "RelativePath": "v1/Pedidos/listar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.ProdutosController",
+    "Method": "AtualizaProduto",
+    "RelativePath": "v1/Produtos/atualizar/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Request.ProdutoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.ProdutosController",
+    "Method": "CadastroProduto",
+    "RelativePath": "v1/Produtos/cadastrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "GerenciamentoDePedidosWebApi.Application.Models.Request.ProdutoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.ProdutosController",
+    "Method": "ApagaProduto",
+    "RelativePath": "v1/Produtos/deletar/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Decimal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.ProdutosController",
+    "Method": "GetByIdProduto",
+    "RelativePath": "v1/Produtos/lista/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Decimal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GerenciamentoDePedidosWebApi.Controllers.V1.ProdutosController",
+    "Method": "GetAllProduto",
+    "RelativePath": "v1/Produtos/listar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

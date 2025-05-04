@@ -1,0 +1,393 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\controllers\\v1\\autenticacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:controllers\\v1\\autenticacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\application\\models\\request\\autenticacaorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:application\\models\\request\\autenticacaorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\application\\models\\request\\produtorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:application\\models\\request\\produtorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\gerenciamentodepedidoswebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:gerenciamentodepedidoswebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\gerenciamentodepedidoswebapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:gerenciamentodepedidoswebapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\controllers\\v1\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:controllers\\v1\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\controllers\\v1\\pedidoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:controllers\\v1\\pedidoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\controllers\\v1\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:controllers\\v1\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\application\\models\\request\\clienterequeste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:application\\models\\request\\clienterequeste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\application\\models\\response\\defaultresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:application\\models\\response\\defaultresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\application\\models\\response\\autenticacaoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:application\\models\\response\\autenticacaoresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\application\\models\\request\\pedidosrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:application\\models\\request\\pedidosrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\application\\dto\\pedidoitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:application\\dto\\pedidoitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\domain\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:domain\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\domain\\entities\\pedidoproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:domain\\entities\\pedidoproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\domain\\entities\\usuariossistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:domain\\entities\\usuariossistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\domain\\entities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:domain\\entities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\domain\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:domain\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\application\\models\\request\\revoketokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:application\\models\\request\\revoketokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|c:\\users\\candr\\source\\repos\\gerenciamentodepedidoswebapi\\application\\models\\request\\refreshtokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CAAC5A-D02B-45CE-9A3F-BDC44D0CE2AE}|GerenciamentoDePedidosWebApi.csproj|solutionrelative:application\\models\\request\\refreshtokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutenticacaoController.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Controllers\\V1\\AutenticacaoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\V1\\AutenticacaoController.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Controllers\\V1\\AutenticacaoController.cs",
+              "RelativeToolTip": "Controllers\\V1\\AutenticacaoController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwB8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T17:16:53.02Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AutenticacaoRequest.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\AutenticacaoRequest.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Request\\AutenticacaoRequest.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\AutenticacaoRequest.cs",
+              "RelativeToolTip": "Application\\Models\\Request\\AutenticacaoRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T17:48:54.556Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProdutoRequest.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\ProdutoRequest.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Request\\ProdutoRequest.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\ProdutoRequest.cs",
+              "RelativeToolTip": "Application\\Models\\Request\\ProdutoRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T19:00:03.887Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProdutosController.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Controllers\\V1\\ProdutosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\V1\\ProdutosController.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Controllers\\V1\\ProdutosController.cs",
+              "RelativeToolTip": "Controllers\\V1\\ProdutosController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T18:15:43.29Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T17:06:29.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GerenciamentoDePedidosWebApi.csproj",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\GerenciamentoDePedidosWebApi.csproj",
+              "RelativeDocumentMoniker": "GerenciamentoDePedidosWebApi.csproj",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\GerenciamentoDePedidosWebApi.csproj",
+              "RelativeToolTip": "GerenciamentoDePedidosWebApi.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-03T23:42:45.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GerenciamentoDePedidosWebApi.http",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\GerenciamentoDePedidosWebApi.http",
+              "RelativeDocumentMoniker": "GerenciamentoDePedidosWebApi.http",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\GerenciamentoDePedidosWebApi.http",
+              "RelativeToolTip": "GerenciamentoDePedidosWebApi.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-05-03T21:30:15.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PedidosController.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Controllers\\V1\\PedidosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\V1\\PedidosController.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Controllers\\V1\\PedidosController.cs",
+              "RelativeToolTip": "Controllers\\V1\\PedidosController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAxwBMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T18:16:50.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Controllers\\V1\\ClientesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\V1\\ClientesController.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Controllers\\V1\\ClientesController.cs",
+              "RelativeToolTip": "Controllers\\V1\\ClientesController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAQwDoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T18:16:27.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ClienteRequeste.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\ClienteRequeste.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Request\\ClienteRequeste.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\ClienteRequeste.cs",
+              "RelativeToolTip": "Application\\Models\\Request\\ClienteRequeste.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T20:05:08.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-03T17:06:18.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-03T21:30:37.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DefaultResponse.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Response\\DefaultResponse.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Response\\DefaultResponse.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Response\\DefaultResponse.cs",
+              "RelativeToolTip": "Application\\Models\\Response\\DefaultResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T18:00:59.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AutenticacaoResponse.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Response\\AutenticacaoResponse.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Response\\AutenticacaoResponse.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Response\\AutenticacaoResponse.cs",
+              "RelativeToolTip": "Application\\Models\\Response\\AutenticacaoResponse.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T17:59:25.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PedidosRequest.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\PedidosRequest.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Request\\PedidosRequest.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\PedidosRequest.cs",
+              "RelativeToolTip": "Application\\Models\\Request\\PedidosRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T21:17:13.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PedidoItemDto.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Dto\\PedidoItemDto.cs",
+              "RelativeDocumentMoniker": "Application\\Dto\\PedidoItemDto.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Dto\\PedidoItemDto.cs",
+              "RelativeToolTip": "Application\\Dto\\PedidoItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T21:28:54.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Domain\\Entities\\Pedido.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Pedido.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Domain\\Entities\\Pedido.cs",
+              "RelativeToolTip": "Domain\\Entities\\Pedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T19:09:52.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PedidoProduto.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Domain\\Entities\\PedidoProduto.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\PedidoProduto.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Domain\\Entities\\PedidoProduto.cs",
+              "RelativeToolTip": "Domain\\Entities\\PedidoProduto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T19:11:37.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UsuariosSistema.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Domain\\Entities\\UsuariosSistema.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\UsuariosSistema.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Domain\\Entities\\UsuariosSistema.cs",
+              "RelativeToolTip": "Domain\\Entities\\UsuariosSistema.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T18:20:56.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Domain\\Entities\\Produto.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Produto.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Domain\\Entities\\Produto.cs",
+              "RelativeToolTip": "Domain\\Entities\\Produto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T19:08:22.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Domain\\Entities\\Cliente.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Cliente.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Domain\\Entities\\Cliente.cs",
+              "RelativeToolTip": "Domain\\Entities\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T19:06:41.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RevokeTokenRequest.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\RevokeTokenRequest.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Request\\RevokeTokenRequest.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\RevokeTokenRequest.cs",
+              "RelativeToolTip": "Application\\Models\\Request\\RevokeTokenRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T17:54:58.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RefreshTokenRequest.cs",
+              "DocumentMoniker": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\RefreshTokenRequest.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Request\\RefreshTokenRequest.cs",
+              "ToolTip": "C:\\Users\\candr\\source\\repos\\GerenciamentoDePedidosWebApi\\Application\\Models\\Request\\RefreshTokenRequest.cs",
+              "RelativeToolTip": "Application\\Models\\Request\\RefreshTokenRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T17:51:35.496Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

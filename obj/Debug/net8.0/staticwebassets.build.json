@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "qgzkkWvhqpBsvOx77WaeXUkctyn9M6wtYsk96yyyLYE=",
+  "Source": "GerenciamentoDePedidosWebApi",
+  "BasePath": "_content/GerenciamentoDePedidosWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
