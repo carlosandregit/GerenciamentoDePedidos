@@ -1,5 +1,18 @@
+using System.Reflection;
+using GerenciamentoDePedidosWebApi.Infrastructure.Autenticacao;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
+using Serilog;
+
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    //.WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .WriteTo.File(@"C:\Logs\log-.txt", rollingInterval: RollingInterval.Day)
+    .Enrich.FromLogContext()
+    .MinimumLevel.Information()
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +35,58 @@ builder.Services.AddVersionedApiExplorer(setup =>
     setup.SubstituteApiVersionInUrl = true;
 });
 
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(x =>
+{
+
+    x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "Autenticação do tipo JWT Bearer. Ex: No header Authorization escreva: 'Bearer 12345abcdef(token)')",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+    x.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    Array.Empty<string>()
+                }
+                });
+    //c.DocumentFilter<TagDescriptionsDocumentFilter>();
+
+});
+
+#region Token
+var key = TokenService.Loadkey();
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(x =>
+{
+    x.RequireHttpsMetadata = false;
+    x.SaveToken = true;
+    x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = key,
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
+});
+#endregion
+
+#region Service
+builder.Services.AddTransient<IUsuarioService, UsuarioService>();
+#endregion
 
 var app = builder.Build();
 

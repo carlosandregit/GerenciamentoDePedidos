@@ -7,7 +7,7 @@ namespace GerenciamentoDePedidosWebApi.Application.Models.Request
     {
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [DefaultValue("fulano.fulano")]
-        public string IdUsuario { get; set; }
+        public string Usuario { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [DefaultValue("123453343232")]

@@ -7,7 +7,7 @@ namespace GerenciamentoDePedidosWebApi.Application.Models.Response
     {
         
         [DefaultValue("jose.souza")]
-        public string IdUsuario { get; set; }
+        public string Usuario { get; set; }
         
         [DefaultValue("eyJhbGciOiJIUzI1NiIsImtpZ.eyJuYW1lIjoiQWRtaW5pc3RyYXRvciIsInJvbGUiOiIxIiwibmJ.vXKIhnnNPqgs9rK-1EMODtD7SVDj2HDFLYsSbhKPFpQ")]
         public string AccessToken { get; set; }
@@ -20,7 +20,7 @@ namespace GerenciamentoDePedidosWebApi.Application.Models.Response
 
         public AutenticacaoResponse(UsuariosSistema user, string jwtToken, string refreshToken)
         {
-            IdUsuario = user.IdUsuario;
+            Usuario = user.Usuario;
             TokenType = "bearer";
             AccessToken = jwtToken;
             RefreshToken = refreshToken;
