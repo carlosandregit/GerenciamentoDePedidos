@@ -1,4 +1,7 @@
-﻿using GerenciamentoDePedidosWebApi.Application.Models.Request;
+﻿using System.Text.Json;
+using GerenciamentoDePedidosWebApi.Application.Interfaces;
+using GerenciamentoDePedidosWebApi.Application.Models.Request;
+using GerenciamentoDePedidosWebApi.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,59 +12,218 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
     [Route("v{version:apiVersion}/[controller]")]
     public class ClientesController : ControllerBase
     {
-        //private readonly IClienteService _clienteService;
+        private readonly IClienteService _clienteService;
+        private readonly ILogger _logger;
 
-        //public ClientesController(IClienteService clienteService)
-        //{
-        //    _clienteService = clienteService;
-        //}
+        private JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions { Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
+
+        public ClientesController(IClienteService clienteService, ILogger logger)
+        {
+            _clienteService = clienteService;
+            _logger = logger;
+        }
+
         [MapToApiVersion("1.0")]
         [Authorize]
         [HttpPost("listar")]
         public async Task<IActionResult> GetAllCliente()
         {
-            //var clientes = await _clienteService.GetAllAsync();
-            return Ok();
+            try
+            {
+                var response = await _clienteService.GetAllAsync();
+                if (response.Count <= 0)
+                {
+                    _logger.LogInformation("404, Clientes/listar, " + JsonSerializer.Serialize(response, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Nenhum cliente localizado");
+                    return NotFound(new { mensagem = "Nenhum cliente localizado" });
+                }
+                else
+                {
+                    _logger.LogInformation("200,  Clientes/listar, " + JsonSerializer.Serialize(response, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Clientes carregados com sucesso");
+                    return Ok(response);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
+            }                     
         }
         [MapToApiVersion("1.0")]
         [Authorize]
-        [HttpPost("lista/{id}")]
-        public async Task<IActionResult> GetByIdCliente(decimal id)
+        [HttpPost("listar/{id}")]
+        public async Task<IActionResult> GetByIdCliente(decimal idCliente)
         {
-            //var cliente = await _clienteService.GetByIdAsync(id);
-            //if (cliente == null) return NotFound();
-            return Ok();
+            try
+            {
+                if(idCliente <= 0)
+                {
+                    _logger.LogInformation("400, Clientes/listar/id, " + JsonSerializer.Serialize(idCliente, jsonSerializerOptions), JsonSerializer.Serialize(idCliente, jsonSerializerOptions), "Cliente Id inválido");
+                    return BadRequest(new {mensagen = "Cliente Id inválido"});
+                }
+                else
+                {
+                    var response = await _clienteService.GetClienteById(idCliente);
+                    if (response == null)
+                    {
+                        _logger.LogInformation("404, Clientes/listar/id, " + JsonSerializer.Serialize(response, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Nenhum cliente localizado");
+                        return NotFound(new { mensagem = "Nenhum cliente localizado" });
+                    }
+                    else
+                    {
+                        _logger.LogInformation("200,  Clientes/listar/id, " + JsonSerializer.Serialize(response, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Cliente carregado com sucesso");
+                        return Ok(response);
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
+            }
+            
         }
         [MapToApiVersion("1.0")]
         [Authorize]
         [HttpPost("cadastrar")]
         public async Task<IActionResult> CadastroCliente([FromBody] ClienteRequeste model)
         {
-            return BadRequest();
-            //if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            //var cliente = await _clienteService.CreateAsync(dto);
-            //return CreatedAtAction(nameof(GetById), new { id = cliente.Id }, cliente);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var clienteExiste = await _clienteService.GetClienteByCpf(model.CPF);
+                    if (clienteExiste)
+                    {
+                        var msg = $"400, Clientes/cadastrar, {JsonSerializer.Serialize(model, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Cliente já cadastro para o cpf informado";
+                        _logger.LogInformation(msg);
+                        return BadRequest(new { mensagem = "Cliente já cadastro para o cpf informado" });
+                    }
+                    else
+                    {
+                        var response = await _clienteService.AdesaoCliente(model);
+                        if (!string.IsNullOrEmpty(response))
+                        {
+                            var msg = $"200, Clientes/listar, {JsonSerializer.Serialize(response, jsonSerializerOptions)} - Cliente carregado com sucesso";
+                            _logger.LogInformation(msg);
+                            return response = Ok(response);
+                        }
+                        else
+                        {
+                            var msg = $"400, Clientes/cadastrar, {JsonSerializer.Serialize(model, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Erro ao cadastrar o cliente";
+                            _logger.LogInformation(msg);
+                            return BadRequest(new {mensagem = "Erro ao cadastrar o cliente" });
+                        }
+                    }
+                    
+                }
+                else
+                {
+                    var msg = $"400, Clientes/cadastrar, {JsonSerializer.Serialize(model, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Falha na comunicação";
+                    _logger.LogInformation(msg);
+                    return BadRequest(new { mensagem = "Falha na comunicação" });
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
+            }                  
         }
+
         [MapToApiVersion("1.0")]
         [Authorize]
         [HttpPost("atualizar/{id}")]
-        public async Task<IActionResult> AtualizaCliente(Guid id, [FromBody] ClienteRequeste model)
+        public async Task<IActionResult> AtualizaCliente(decimal idCliente, [FromBody] ClienteRequeste model)
         {
-            //if (!ModelState.IsValid) return BadRequest(ModelState);
+            try
+            {
+                if (idCliente <= 0)
+                {
+                    var msg = $"400, Clientes/atualizar/id, {JsonSerializer.Serialize(model, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Cliente Id inválido";
+                    _logger.LogInformation(msg);
+                    return BadRequest(new { mensagen = "Cliente Id inválido" });
+                }
+                else
+                {
+                    var clienteExiste = await _clienteService.GetClienteById(idCliente);
+                    if (clienteExiste.IdCliente <= 0)
+                    {
+                        var msg = $"404, Clientes/atualizar/id, {JsonSerializer.Serialize(model, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Cliente não localizado";
+                        _logger.LogInformation(msg);
+                        return NotFound(new { mensagem = "Cliente não localizado" });
+                    }
+                    else
+                    {
+                        var response = await _clienteService.AtualizarCliente(idCliente, model);
 
-            //var updated = await _clienteService.UpdateAsync(id, dto);
-            //if (!updated) return NotFound();
-            return NoContent();
+                        if (response != null)
+                        {
+                            var msg = $"200, Clientes/atualizar/id, {JsonSerializer.Serialize(response, jsonSerializerOptions)} - Atualizado com sucesso";
+                            _logger.LogInformation(msg);
+                            return Ok(response);
+                        }
+                        else
+                        {
+                            var msg = $"400 ,Clientes/atualizar/id, {JsonSerializer.Serialize(model, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Erro ao atualizar o cliente";
+                            _logger.LogInformation(msg);
+                            return BadRequest(new { mensagem = "Erro ao atualizar o cliente" });
+                        }
+                    }
+                }                             
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
+            }
         }
         [MapToApiVersion("1.0")]
         [Authorize]
         [HttpPost("deletar/{id}")]
-        public async Task<IActionResult> DeletaCliente(Guid id)
+        public async Task<IActionResult> DeletaCliente(decimal idCliente)
         {
-            //var deleted = await _clienteService.DeleteAsync(id);
-            //if (!deleted) return NotFound();
-            return NoContent();
+            try
+            {
+                if (idCliente <= 0)
+                {
+                    var msg = $"400, Clientes/deletar/id, {JsonSerializer.Serialize(idCliente, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Cliente Id inválido";
+                    _logger.LogInformation(msg);
+                    return BadRequest(new { mensagen = "Cliente Id inválido" });
+                }
+                else
+                {
+                    var clienteExiste = await _clienteService.GetClienteById(idCliente);
+                    if (clienteExiste.IdCliente <= 0)
+                    {
+                        var msg = $"404, Clientes/deletar/id, {JsonSerializer.Serialize(idCliente, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Cliente não localizado";
+                        _logger.LogInformation(msg);
+                        return NotFound(new { mensagem = "Cliente não localizado" });
+                    }
+                    else
+                    {
+                        var response = await _clienteService.DeleteCliente(idCliente);
+
+                        if (response != null)
+                        {
+                            var msg = $"200, Clientes/deletar/id, {JsonSerializer.Serialize(response, jsonSerializerOptions)} - Cliente removido com sucesso";
+                            _logger.LogInformation(msg);
+                            return Ok(response);
+                        }
+                        else
+                        {
+                            var msg = $"400 ,Clientes/deletar/id, {JsonSerializer.Serialize(idCliente, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Erro ao deletar o cliente";
+                            _logger.LogInformation(msg);
+                            return BadRequest(new { mensagem = "Erro ao deletar o cliente" });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
+            }
         }
     }
 }

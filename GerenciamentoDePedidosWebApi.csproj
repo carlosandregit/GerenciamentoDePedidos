@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Service\" />
     <Folder Include="Infrastructure\Logging\" />
   </ItemGroup>
 

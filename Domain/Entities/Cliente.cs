@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace GerenciamentoDePedidosWebApi.Domain.Entities
 {
@@ -10,7 +11,8 @@ namespace GerenciamentoDePedidosWebApi.Domain.Entities
         public string CPF { get; set; }
         public string Email { get; set; }
         public DateTime DataCadastro { get; set; }
-        //public ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
+        public DateTime DataNascimento { get; set; }
+        public ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
 
     }
 }

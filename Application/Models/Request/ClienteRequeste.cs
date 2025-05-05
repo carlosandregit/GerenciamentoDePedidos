@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace GerenciamentoDePedidosWebApi.Application.Models.Request
 {
@@ -13,6 +14,10 @@ namespace GerenciamentoDePedidosWebApi.Application.Models.Request
 
         [Required(ErrorMessage = "O email é obrigatório.")]
         [EmailAddress(ErrorMessage = "Email inválido.")]
-        public string Email { get; set; }
+        public string Email { get; set; }      
+
+        [Required(ErrorMessage = "Data de Nascimento é obrigatório.")]
+        [DefaultValue("yyyy-MM-dd")]
+        public DateTime DataNascimento { get; set; }
     }
 }

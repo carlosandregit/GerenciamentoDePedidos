@@ -25,7 +25,7 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
         }
         [MapToApiVersion("1.0")]
         [Authorize]
-        [HttpPost("lista/{id}")]
+        [HttpPost("listar/{id}")]
         public async Task<IActionResult> GetByIdPedido(decimal id)
         {
             //var pedido = await _pedidoService.GetByIdAsync(id);
