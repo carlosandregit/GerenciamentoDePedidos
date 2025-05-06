@@ -15,8 +15,24 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Data
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<PedidoProduto> PedidoProdutos { get; set; }
         public DbSet<Produto> Produtos { get; set; }
-        protected DataContext()
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+
+            modelBuilder.Entity<PedidoProduto>()
+                .HasKey(pp => new { pp.PedidoId, pp.ProdutoId });
+
+            modelBuilder.Entity<PedidoProduto>()
+                .HasOne(pp => pp.Pedido)
+                .WithMany(p => p.PedidoProdutos)
+                .HasForeignKey(pp => pp.PedidoId);
+
+            modelBuilder.Entity<PedidoProduto>()
+                .HasOne(pp => pp.Produto)
+                .WithMany(p => p.PedidoProdutos)
+                .HasForeignKey(pp => pp.ProdutoId);
         }
+
     }
 }

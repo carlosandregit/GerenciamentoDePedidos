@@ -4,12 +4,12 @@ using GerenciamentoDePedidosWebApi.Domain.Entities;
 
 namespace GerenciamentoDePedidosWebApi.Application.Interfaces
 {
-    public interface IProdutoService
+    public interface IProdutoRepository : IRepository<Produto>
     {
         Task<Produto> GetByIdAsync(decimal produtoId);
         Task<List<Produto>> GetAllAsync();
-        Task<ProdutoDto> CadastrarProdutoAsync(ProdutoRequest model);
-        Task<ProdutoDto> AtualizarProdutoAsync(decimal idProduto, ProdutoRequest model);
-        Task<bool> DeletarProdutoAsync(decimal idProduto);
+        Task<dynamic> CadastrarProdutoAsync(Produto produto);
+        Task<dynamic> AtualizarProdutoAsync(Produto produto);
+        Task<dynamic> DeletarProdutoAsync(Produto pedido);
     }
 }

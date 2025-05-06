@@ -33,12 +33,13 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
                 var response = await _clienteService.GetAllAsync();
                 if (response.Count <= 0)
                 {
-                    _logger.LogInformation("404, Clientes/listar, " + JsonSerializer.Serialize(response, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Nenhum cliente localizado");
+                    var msg = $"404, Clientes/listar, {JsonSerializer.Serialize(response, jsonSerializerOptions)}, {JsonSerializer.Serialize(response, jsonSerializerOptions)}, - Nenhum cliente localizado";
+                    _logger.LogInformation(msg);
                     return NotFound(new { mensagem = "Nenhum cliente localizado" });
                 }
                 else
-                {
-                    _logger.LogInformation("200,  Clientes/listar, " + JsonSerializer.Serialize(response, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Clientes carregados com sucesso");
+                {   var msg = $"200,  Clientes/listar, {JsonSerializer.Serialize(response, jsonSerializerOptions)}, {JsonSerializer.Serialize(response, jsonSerializerOptions)}, - Clientes carregados com sucesso";
+                    _logger.LogInformation(msg);
                     return Ok(response);
                 }
             }
@@ -57,7 +58,8 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             {
                 if(idCliente <= 0)
                 {
-                    _logger.LogInformation("400, Clientes/listar/id, " + JsonSerializer.Serialize(idCliente, jsonSerializerOptions), JsonSerializer.Serialize(idCliente, jsonSerializerOptions), "Cliente Id inválido");
+                    var msg = $"400, Clientes/listar/id, {JsonSerializer.Serialize(idCliente, jsonSerializerOptions)}, {JsonSerializer.Serialize(idCliente, jsonSerializerOptions)}, - Cliente Id inválido";
+                    _logger.LogInformation(msg);
                     return BadRequest(new {mensagen = "Cliente Id inválido"});
                 }
                 else
@@ -65,12 +67,14 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
                     var response = await _clienteService.GetClienteById(idCliente);
                     if (response == null)
                     {
-                        _logger.LogInformation("404, Clientes/listar/id, " + JsonSerializer.Serialize(response, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Nenhum cliente localizado");
+                        var msg = $"404, Clientes/listar/id, {JsonSerializer.Serialize(response, jsonSerializerOptions)}, {JsonSerializer.Serialize(response, jsonSerializerOptions)}, - Nenhum cliente localizado";
+                        _logger.LogInformation(msg);
                         return NotFound(new { mensagem = "Nenhum cliente localizado" });
                     }
                     else
                     {
-                        _logger.LogInformation("200,  Clientes/listar/id, " + JsonSerializer.Serialize(response, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Cliente carregado com sucesso");
+                        var msg = $"200,  Clientes/listar/id, {JsonSerializer.Serialize(response, jsonSerializerOptions)}, {JsonSerializer.Serialize(response, jsonSerializerOptions)},  - Cliente carregado com sucesso";
+                        _logger.LogInformation(msg);
                         return Ok(response);
                     }
                 }

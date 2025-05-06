@@ -20,7 +20,7 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
         public async Task<List<Cliente>> GetAllAsync()
         {
             await _context.Clientes.FindAsync();
-            return _context.Clientes.ToList();
+            return  _context.Clientes.ToList();
         }
 
         public async Task<Cliente> GetClienteById(decimal idCliente)
@@ -35,9 +35,9 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
             cliente.CPF = cpf;
             cliente.Email = email;
             cliente.DataNascimento = dataNascimento;
-            cliente.DataCadastro = dtCadastro;       
-         
-              _context.Clientes.AddAsync(cliente);
+            cliente.DataCadastro = dtCadastro;
+
+            await _context.Clientes.AddAsync(cliente);
             await _context.SaveChangesAsync();
 
             return cliente;
@@ -59,7 +59,7 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
             cliente.DataNascimento = dataNascimento;
             cliente.DataCadastro = dtCadastro;
 
-             _context.Clientes.Update(cliente).ReloadAsync();
+            await _context.Clientes.Update(cliente).ReloadAsync();
             await _context.SaveChangesAsync();
 
             return cliente;

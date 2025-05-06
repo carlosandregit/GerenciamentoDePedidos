@@ -10,6 +10,6 @@ namespace GerenciamentoDePedidosWebApi.Domain.Entities
         public decimal PrecoProduto { get; set; }
         public int Estoque { get; set; }
 
-        //public ICollection<PedidoProduto> PedidoProdutos { get; set; } = new List<PedidoProduto>();
+        public ICollection<PedidoProduto> PedidoProdutos { get; set; } = new List<PedidoProduto>();
     }
 }
