@@ -1,5 +1,4 @@
-﻿using GerenciamentoDePedidosWebApi.Application.Facede;
-using GerenciamentoDePedidosWebApi.Application.Interfaces;
+﻿using GerenciamentoDePedidosWebApi.Application.Interfaces;
 using GerenciamentoDePedidosWebApi.Application.Models.Request;
 using GerenciamentoDePedidosWebApi.Application.Models.Response;
 
