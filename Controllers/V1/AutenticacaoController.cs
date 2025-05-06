@@ -12,13 +12,49 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
     public class AutenticacaoController : ControllerBase
     {
         private readonly IUsuarioService _usuarioService;
-        private readonly ILogger _logger;
+        private readonly ILogger<AutenticacaoController> _logger;
 
         private JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions { Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
-        public AutenticacaoController(IUsuarioService usuarioService, ILogger logger)
+        public AutenticacaoController(IUsuarioService usuarioService, ILogger<AutenticacaoController> logger)
         {
             _usuarioService = usuarioService;
             _logger = logger;
+        }
+
+        [MapToApiVersion("1.0")]
+        [HttpPost("Cadastro/usuario")]
+        public async Task<IActionResult> CadastroUsuario([FromBody] AutenticacaoRequest model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    
+
+                    var response = await _usuarioService.InsertUsuario(model);
+
+                    if (response != null)
+                    {
+                        _logger.LogInformation("404, Autenticacao/logout, " + JsonSerializer.Serialize(model, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Token não encontrado");
+                        return NotFound(new { message = "Token não encontrado" });
+                    }
+                    else
+                    {
+                        _logger.LogInformation("200, Autenticacao/logout, " + JsonSerializer.Serialize(model, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Token revogado");
+                        return Ok(new { message = "Token revogado" });
+                    }
+                }
+                else
+                {
+                    _logger.LogInformation("400,  Autenticacao/logout, " + JsonSerializer.Serialize(model, jsonSerializerOptions), JsonSerializer.Serialize(ModelState, jsonSerializerOptions), "Falha na comunicação");
+                    return BadRequest(ModelState);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
+            }
         }
 
         [MapToApiVersion("1.0")]
@@ -52,6 +88,8 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             catch (Exception ex)
             {
                 _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                _logger.LogCritical("Ocorreu uma falha na comunicação, tente novamente!");
+                //_logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
                 return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }
         }

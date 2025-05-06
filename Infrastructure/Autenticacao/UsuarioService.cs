@@ -1,11 +1,13 @@
 ﻿using GerenciamentoDePedidosWebApi.Application.Interfaces;
 using GerenciamentoDePedidosWebApi.Application.Models.Request;
 using GerenciamentoDePedidosWebApi.Application.Models.Response;
+using GerenciamentoDePedidosWebApi.Domain.Entities;
 
 namespace GerenciamentoDePedidosWebApi.Infrastructure.Autenticacao
 {
     public interface IUsuarioService
     {
+        Task<AutenticacaoResponse> InsertUsuario(AutenticacaoRequest model);
         Task<AutenticacaoResponse> Login(AutenticacaoRequest model);
         Task<AutenticacaoResponse> RefreshToken(string token);
         Task<bool> RevokeToken(string token);
@@ -19,9 +21,9 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Autenticacao
             if (credenciais == null)
                 return null;
 
-            var jwt = TokenService.GenerateToken(credenciais[0]);
+            var jwt = TokenService.GenerateToken(credenciais);
 
-            return new AutenticacaoResponse(credenciais[0], jwt, credenciais[0].TokenAcesso.ToString());
+            return new AutenticacaoResponse(credenciais, jwt, credenciais.TokenAcesso.ToString());
         }
 
         public async Task<AutenticacaoResponse> RefreshToken(string token)
@@ -50,6 +52,20 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Autenticacao
             await _usuarioRepository.UpdateUsuariosSistema(credenciais);
 
             return true;
+        } 
+        public async Task<AutenticacaoResponse> InsertUsuario(AutenticacaoRequest model)
+        {
+            UsuariosSistema usuario = new UsuariosSistema()
+            {
+                Usuario = model.Usuario,
+                Senha = model.Senha,
+                TokenAcesso = null,
+            };
+            var credenciais = await _usuarioRepository.InsertUsuario(usuario);
+
+           
+
+            return new AutenticacaoResponse(credenciais, credenciais.TokenAcesso.ToString(), credenciais.TokenAcesso.ToString());
         }
     }
 }

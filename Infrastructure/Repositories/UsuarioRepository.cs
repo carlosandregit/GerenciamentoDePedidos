@@ -16,9 +16,9 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
             get { return Context as DataContext; }
         }
 
-        public async Task<List<UsuariosSistema>> GetUsuarioSistena(string usuario, string senha)
+        public async Task<UsuariosSistema> GetUsuarioSistena(string usuario, string senha)
         {
-            return await _context.UsuariosSistema.Where(x => x.Usuario == usuario && x.Senha == senha).ToListAsync();
+            return await _context.UsuariosSistema.FirstOrDefaultAsync(x => x.Usuario == usuario && x.Senha == senha);
         }
 
         public async Task<UsuariosSistema> VerificaTokenAcesso(Guid token)
@@ -28,8 +28,14 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
 
         public async Task UpdateUsuariosSistema(UsuariosSistema usuariosSistema)
         {
-            Context.Update(usuariosSistema);
+            _context.UsuariosSistema.Update(usuariosSistema);
             await Context.SaveChangesAsync();
+        }
+        public async Task<UsuariosSistema> InsertUsuario(UsuariosSistema usuariosSistema)
+        {
+            await _context.UsuariosSistema.AddAsync(usuariosSistema);
+            await Context.SaveChangesAsync();
+            return usuariosSistema;
         }
     }
 }

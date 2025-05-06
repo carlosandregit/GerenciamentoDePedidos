@@ -1,15 +1,20 @@
 using System.Reflection;
+using GerenciamentoDePedidosWebApi.Application.Interfaces;
+using GerenciamentoDePedidosWebApi.Application.Service;
 using GerenciamentoDePedidosWebApi.Infrastructure.Autenticacao;
+using GerenciamentoDePedidosWebApi.Infrastructure.Data;
+using GerenciamentoDePedidosWebApi.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
-    //.WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
-    .WriteTo.File(@"C:\Logs\log-.txt", rollingInterval: RollingInterval.Day)
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    //.WriteTo.File(@"C:\Logs\log-.txt", rollingInterval: RollingInterval.Day)
     .Enrich.FromLogContext()
     .MinimumLevel.Information()
     .CreateLogger();
@@ -86,8 +91,22 @@ builder.Services.AddAuthentication(x =>
 
 #region Service
 builder.Services.AddTransient<IUsuarioService, UsuarioService>();
+builder.Services.AddTransient<IPedidoService,  PedidoService>();
+builder.Services.AddTransient<IProdutoService, ProdutoService>();
+builder.Services.AddTransient<IClienteService, ClienteService>();
 #endregion
 
+#region Repository
+builder.Services.AddTransient<IPedidoRepository, PedidoRepository>();
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddTransient<IProdutoRepository, ProdutoRepository>();
+builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
+#endregion
+
+#region Banco
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+#endregion
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -15,11 +15,11 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
     public class ProdutosController : ControllerBase
     {
         private readonly IProdutoService _produtoService;
-        private readonly ILogger _logger;
+        private readonly ILogger<AutenticacaoController> _logger;
 
         private JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions { Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
 
-        public ProdutosController(IProdutoService produtoService, ILogger logger)
+        public ProdutosController(IProdutoService produtoService, ILogger<AutenticacaoController> logger)
         {
             _produtoService = produtoService;
             _logger = logger;

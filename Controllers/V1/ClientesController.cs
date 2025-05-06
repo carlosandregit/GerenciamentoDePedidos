@@ -13,11 +13,11 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
     public class ClientesController : ControllerBase
     {
         private readonly IClienteService _clienteService;
-        private readonly ILogger _logger;
+        private readonly ILogger<AutenticacaoController> _logger;
 
         private JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions { Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
 
-        public ClientesController(IClienteService clienteService, ILogger logger)
+        public ClientesController(IClienteService clienteService, ILogger<AutenticacaoController> logger)
         {
             _clienteService = clienteService;
             _logger = logger;
