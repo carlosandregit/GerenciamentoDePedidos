@@ -6,10 +6,10 @@ namespace GerenciamentoDePedidosWebApi.Application.Interfaces
 {
     public interface IProdutoService
     {
-        Task<Produto> GetByIdAsync(decimal produtoId);
+        Task<Produto> GetByIdAsync(int produtoId);
         Task<List<Produto>> GetAllAsync();
         Task<ProdutoDto> CadastrarProdutoAsync(ProdutoRequest model);
-        Task<ProdutoDto> AtualizarProdutoAsync(decimal idProduto, ProdutoRequest model);
-        Task<bool> DeletarProdutoAsync(decimal idProduto);
+        Task<ProdutoDto> AtualizarProdutoAsync(int idProduto, ProdutoRequest model);
+        Task<bool> DeletarProdutoAsync(int idProduto);
     }
 }

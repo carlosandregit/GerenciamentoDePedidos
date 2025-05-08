@@ -56,8 +56,8 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
         }
         [MapToApiVersion("1.0")]
         [Authorize]
-        [HttpPost("listar/{id}")]
-        public async Task<IActionResult> GetByIdPedido(decimal idPedido)
+        [HttpPost("listar/id")]
+        public async Task<IActionResult> GetByIdPedido(int idPedido)
         {
             try
             {
@@ -98,10 +98,10 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             try
             {
                 if (ModelState.IsValid)
-                {
-                    var clienteExiste = await _clienteService.GetClienteById(model.ClienteId);
+                {                 
+                    var clienteExiste = await _clienteService.GetClienteByCpf(model.CPF);
 
-                    if (clienteExiste == null)
+                    if (!clienteExiste)
                     {
                         var msg = $"404, Pedidos/cadastrar, {JsonSerializer.Serialize(model, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Cliente não localizado";
                         _logger.LogInformation(msg);
@@ -109,6 +109,7 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
                     } 
                     else
                     {
+
                         var response = await _pedidoService.CadastrarPedido(model);
                         if (response != null)
                         {
@@ -137,49 +138,12 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
                 _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
                 return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }
-        }
-        [MapToApiVersion("1.0")]
-        [Authorize]
-        [HttpPost("deletar/{id}")]
-        public async Task<IActionResult> DeletarPedido(decimal idPedido)
-        {
-            try
-            {
-                if (idPedido > 0)
-                {
-                    var response = await _pedidoService.DeletarPedidoAsync(idPedido);
-
-                    if (!response)
-                    {
-                        var msg = $"404, Pedidos/deletar/id, {JsonSerializer.Serialize(idPedido, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Pedido não localizado";
-                        _logger.LogInformation(msg);
-                        return NotFound(new { mensagem = "Pedido não localizado" });
-                    }
-                    else
-                    {
-                        var msg = $"200, Pedidos/deletar/id, {JsonSerializer.Serialize(response, jsonSerializerOptions)} - Pedido excluido com sucesso";
-                        _logger.LogInformation(msg);
-                        return Ok(new {mensagem = "Pedido excluido com sucesso"});
-                    }
-                }
-                else
-                {
-                    var msg = $"400, Pedidos/deletar/id, {JsonSerializer.Serialize(idPedido, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Id pedido inválido";
-                    _logger.LogInformation(msg);
-                    return BadRequest(new { mensagem = "Id pedido inválido" });
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
-                return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
-            }
-        }
+        }       
 
         [MapToApiVersion("1.0")]
         [Authorize]
-        [HttpPost("atualizar/{id}")]
-        public async Task<IActionResult> AtualizarPedido(decimal idPedido, [FromBody] UpdatePedidoRequest model)
+        [HttpPost("atualizar/id")]
+        public async Task<IActionResult> AtualizarPedido(int idPedido, [FromBody] UpdatePedidoRequest model)
         {
 
             try
@@ -193,9 +157,9 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
                         return BadRequest("O pedido deve conter pelo menos um produto.");
                     }
                     var pedido = await _pedidoService.GetPedidoById(idPedido);
-                    var cliente = await _clienteService.GetClienteById(model.ClienteId);
+                    var cliente = await _clienteService.GetClienteByCpf(model.CPF);
 
-                    if (pedido == null || cliente == null)
+                    if (pedido == null || cliente == false)
                     {
                         var msg = $"404, Pedidos/atualizar/id, {JsonSerializer.Serialize(idPedido, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Pedido não encontrado ou Cliente não encontrado.";
                         _logger.LogInformation(msg);
@@ -222,6 +186,44 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
                     var msg = $"500, Pedidos/atualizar/id, {JsonSerializer.Serialize(idPedido, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - falha na comunicação, tente novamente!";
                     _logger.LogInformation(msg);
                     return BadRequest(new { mensagem = "falha na comunicação, tente novamente!" });
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
+                return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
+            }
+        }
+
+        [MapToApiVersion("1.0")]
+        [Authorize]
+        [HttpPost("deletar/id")]
+        public async Task<IActionResult> DeletarPedido(int idPedido)
+        {
+            try
+            {
+                if (idPedido > 0)
+                {
+                    var response = await _pedidoService.DeletarPedidoAsync(idPedido);
+
+                    if (!response)
+                    {
+                        var msg = $"404, Pedidos/deletar/id, {JsonSerializer.Serialize(idPedido, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Pedido não localizado";
+                        _logger.LogInformation(msg);
+                        return NotFound(new { mensagem = "Pedido não localizado" });
+                    }
+                    else
+                    {
+                        var msg = $"200, Pedidos/deletar/id, {JsonSerializer.Serialize(response, jsonSerializerOptions)} - Pedido excluido com sucesso";
+                        _logger.LogInformation(msg);
+                        return Ok(new { mensagem = "Pedido excluido com sucesso" });
+                    }
+                }
+                else
+                {
+                    var msg = $"400, Pedidos/deletar/id, {JsonSerializer.Serialize(idPedido, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Id pedido inválido";
+                    _logger.LogInformation(msg);
+                    return BadRequest(new { mensagem = "Id pedido inválido" });
                 }
             }
             catch (Exception ex)

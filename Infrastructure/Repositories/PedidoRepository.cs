@@ -17,10 +17,9 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
 
         public async Task<List<Pedido>> GetAllAsync()
         {
-             await _context.Pedidos.FindAsync();
-            return _context.Pedidos.ToList();
+            return await _context.Pedidos.ToListAsync();
         }
-        public async Task<Pedido> GetPedidoById(decimal idPedido)
+        public async Task<Pedido> GetPedidoById(int idPedido)
         {
             return await _context.Pedidos.FindAsync(idPedido);            
         } 
@@ -32,11 +31,11 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
         } 
         public async Task<dynamic> DeletarPedidoAsync(Pedido pedido)
         {
-             _context.Pedidos.Remove(pedido);
+            _context.Pedidos.Remove(pedido);
             return await _context.SaveChangesAsync();
         } 
         public async Task<dynamic> AtualizarPedidoAsync(Pedido pedido)
-        {
+        {            
              _context.Pedidos.Update(pedido);
             return await _context.SaveChangesAsync();
         }

@@ -18,7 +18,14 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
 
         public async Task<UsuariosSistema> GetUsuarioSistena(string usuario, string senha)
         {
-            return await _context.UsuariosSistema.FirstOrDefaultAsync(x => x.Usuario == usuario && x.Senha == senha);
+            try
+            {
+                 return await _context.UsuariosSistema.FirstOrDefaultAsync(x => x.Usuario == usuario && x.Senha == senha);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<UsuariosSistema> VerificaTokenAcesso(Guid token)
@@ -33,9 +40,17 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
         }
         public async Task<UsuariosSistema> InsertUsuario(UsuariosSistema usuariosSistema)
         {
-            await _context.UsuariosSistema.AddAsync(usuariosSistema);
-            await Context.SaveChangesAsync();
-            return usuariosSistema;
+            try
+            {
+                await _context.UsuariosSistema.AddAsync(usuariosSistema);
+                await Context.SaveChangesAsync();
+                return usuariosSistema;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+          
         }
     }
 }

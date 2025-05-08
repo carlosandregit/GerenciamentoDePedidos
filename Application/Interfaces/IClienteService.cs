@@ -6,11 +6,11 @@ namespace GerenciamentoDePedidosWebApi.Application.Interfaces
     public interface IClienteService
     {
         Task<List<Cliente>> GetAllAsync();
-        Task<Cliente> GetClienteById(decimal idCliente);       
+        Task<Cliente> GetClienteById(int idCliente);       
         Task<dynamic> AdesaoCliente(ClienteRequeste model);
         Task<bool> GetClienteByCpf(string cpf);
-        Task<Cliente> AtualizarCliente(decimal idCliente, ClienteRequeste model);
-        Task<dynamic> DeleteCliente(decimal idCliente);
+        Task<Cliente> AtualizarCliente(int idCliente, ClienteRequeste model);
+        Task<dynamic> DeleteCliente(int idCliente);
 
     }
 }

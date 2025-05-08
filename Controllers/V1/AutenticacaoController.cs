@@ -35,24 +35,24 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
 
                     if (response != null)
                     {
-                        _logger.LogInformation("404, Autenticacao/logout, " + JsonSerializer.Serialize(model, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Token não encontrado");
-                        return NotFound(new { message = "Token não encontrado" });
+                        _logger.LogInformation("200, Autenticacao/cadastro/usuario, " + JsonSerializer.Serialize(model, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Usuario criado com sucesso");
+                        return NotFound(new { message = "Usuario criado com sucesso" });
                     }
                     else
                     {
-                        _logger.LogInformation("200, Autenticacao/logout, " + JsonSerializer.Serialize(model, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Token revogado");
-                        return Ok(new { message = "Token revogado" });
+                        _logger.LogInformation("400, Autenticacao/cadastro/usuario, " + JsonSerializer.Serialize(model, jsonSerializerOptions), JsonSerializer.Serialize(response, jsonSerializerOptions), "Ocorreu uma falha na comunicação, tente novamente!");
+                        return Ok(new { message = "Ocorreu uma falha na comunicação, tente novamente!" });
                     }
                 }
                 else
                 {
-                    _logger.LogInformation("400,  Autenticacao/logout, " + JsonSerializer.Serialize(model, jsonSerializerOptions), JsonSerializer.Serialize(ModelState, jsonSerializerOptions), "Falha na comunicação");
+                    _logger.LogInformation("400,  Autenticacao/cadastro/usuario, " + JsonSerializer.Serialize(model, jsonSerializerOptions), JsonSerializer.Serialize(ModelState, jsonSerializerOptions), "Falha na comunicação");
                     return BadRequest(ModelState);
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
                 return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }
         }
@@ -87,9 +87,7 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             }
             catch (Exception ex)
             {
-                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
-                _logger.LogCritical("Ocorreu uma falha na comunicação, tente novamente!");
-                //_logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
                 return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }
         }
@@ -125,7 +123,7 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             }
             catch (Exception ex)
             {
-                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
                 return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }
         }
@@ -161,7 +159,7 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             }
             catch (Exception ex)
             {
-                    _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                    _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
                     return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }
         }

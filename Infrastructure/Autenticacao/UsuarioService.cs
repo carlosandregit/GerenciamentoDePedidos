@@ -15,6 +15,10 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Autenticacao
     public class UsuarioService : IUsuarioService
     {
         private IUsuarioRepository _usuarioRepository;
+        public UsuarioService(IUsuarioRepository usuarioRepository)
+        {
+            _usuarioRepository = usuarioRepository;
+        }
         public async Task<AutenticacaoResponse> Login(AutenticacaoRequest model)
         {
             var credenciais = await _usuarioRepository.GetUsuarioSistena(model.Usuario, model.Senha);
@@ -57,9 +61,10 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Autenticacao
         {
             UsuariosSistema usuario = new UsuariosSistema()
             {
+                IdUsuario = 1,
                 Usuario = model.Usuario,
                 Senha = model.Senha,
-                TokenAcesso = null,
+                TokenAcesso = Guid.NewGuid(),
             };
             var credenciais = await _usuarioRepository.InsertUsuario(usuario);
 

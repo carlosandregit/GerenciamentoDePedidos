@@ -45,14 +45,14 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             }
             catch (Exception ex)
             {
-                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
                 return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }                     
         }
         [MapToApiVersion("1.0")]
         [Authorize]
-        [HttpPost("listar/{id}")]
-        public async Task<IActionResult> GetByIdCliente(decimal idCliente)
+        [HttpPost("listar/id")]
+        public async Task<IActionResult> GetByIdCliente(int idCliente)
         {
             try
             {
@@ -82,7 +82,7 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             }
             catch (Exception ex)
             {
-                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
                 return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }
             
@@ -130,15 +130,15 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             }
             catch (Exception ex)
             {
-                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
                 return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }                  
         }
 
         [MapToApiVersion("1.0")]
         [Authorize]
-        [HttpPost("atualizar/{id}")]
-        public async Task<IActionResult> AtualizaCliente(decimal idCliente, [FromBody] ClienteRequeste model)
+        [HttpPost("atualizar/id")]
+        public async Task<IActionResult> AtualizaCliente(int idCliente, [FromBody] ClienteRequeste model)
         {
             try
             {
@@ -151,7 +151,7 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
                 else
                 {
                     var clienteExiste = await _clienteService.GetClienteById(idCliente);
-                    if (clienteExiste.IdCliente <= 0)
+                    if (clienteExiste == null)
                     {
                         var msg = $"404, Clientes/atualizar/id, {JsonSerializer.Serialize(model, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Cliente não localizado";
                         _logger.LogInformation(msg);
@@ -178,14 +178,14 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             }
             catch (Exception ex)
             {
-                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
                 return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }
         }
         [MapToApiVersion("1.0")]
         [Authorize]
-        [HttpPost("deletar/{id}")]
-        public async Task<IActionResult> DeletaCliente(decimal idCliente)
+        [HttpPost("deletar/id")]
+        public async Task<IActionResult> DeletaCliente(int idCliente)
         {
             try
             {
@@ -198,7 +198,7 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
                 else
                 {
                     var clienteExiste = await _clienteService.GetClienteById(idCliente);
-                    if (clienteExiste.IdCliente <= 0)
+                    if (clienteExiste == null)
                     {
                         var msg = $"404, Clientes/deletar/id, {JsonSerializer.Serialize(idCliente, jsonSerializerOptions)}, {JsonSerializer.Serialize(ModelState, jsonSerializerOptions)} - Cliente não localizado";
                         _logger.LogInformation(msg);
@@ -225,7 +225,7 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
             }
             catch (Exception ex)
             {
-                _logger.LogInformation("Ocorreu uma falha na comunicação, tente novamente!");
+                _logger.LogInformation("500, Ocorreu uma falha na comunicação, tente novamente!");
                 return BadRequest(new { mensagem = "Ocorreu uma falha na comunicação, tente novamente!" });
             }
         }

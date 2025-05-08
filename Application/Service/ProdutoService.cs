@@ -18,7 +18,7 @@ namespace GerenciamentoDePedidosWebApi.Application.Service
         {
            return await _produtoRepository.GetAllAsync(); 
         }
-        public async Task<Produto> GetByIdAsync(decimal produtoId)
+        public async Task<Produto> GetByIdAsync(int produtoId)
         {
            return await _produtoRepository.GetByIdAsync(produtoId);
         }
@@ -43,7 +43,7 @@ namespace GerenciamentoDePedidosWebApi.Application.Service
             };
         }
 
-        public async Task<ProdutoDto> AtualizarProdutoAsync(decimal idProduto, ProdutoRequest model)
+        public async Task<ProdutoDto> AtualizarProdutoAsync(int idProduto, ProdutoRequest model)
         {
             Produto produto = new Produto
             {
@@ -64,7 +64,7 @@ namespace GerenciamentoDePedidosWebApi.Application.Service
             };
         }
 
-        public async Task<bool> DeletarProdutoAsync(decimal idProduto)
+        public async Task<bool> DeletarProdutoAsync(int idProduto)
         {
             var produto = await _produtoRepository.GetByIdAsync(idProduto);
             if (produto == null)

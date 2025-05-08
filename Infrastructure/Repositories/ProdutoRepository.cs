@@ -17,11 +17,10 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
 
         public async Task<List<Produto>> GetAllAsync()
         {
-             await _context.Produtos.FindAsync();
             return await _context.Produtos.ToListAsync();
         }
         
-        public async Task<Produto> GetByIdAsync(decimal produtoId)
+        public async Task<Produto> GetByIdAsync(int produtoId)
         {
             return await _context.Produtos.FindAsync(produtoId);
         } 
@@ -34,7 +33,11 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
         }
         public async Task<dynamic> AtualizarProdutoAsync(Produto produto)
         {
-            _context.Produtos.Update(produto);
+            var produtos = await _context.Produtos.FindAsync(produto.IdProduto);
+            produtos.PrecoProduto = produto.PrecoProduto; 
+            produtos.DescricaoProduto = produto.DescricaoProduto; 
+            produtos.Estoque = produto.Estoque; 
+            
             return await _context.SaveChangesAsync();
         }
 

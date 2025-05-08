@@ -19,53 +19,54 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Repositories
         }
         public async Task<List<Cliente>> GetAllAsync()
         {
-            await _context.Clientes.FindAsync();
-            return  _context.Clientes.ToList();
+           return await _context.Clientes.ToListAsync();
         }
 
-        public async Task<Cliente> GetClienteById(decimal idCliente)
+        public async Task<Cliente> GetClienteById(int idCliente)
         {
             return await _context.Clientes.FindAsync(idCliente);
         }
 
         public async Task<Cliente> AdesaoCliente(string nome, string cpf, string email, DateTime dataNascimento, DateTime dtCadastro)
         {
-            Cliente cliente = new Cliente();
-            cliente.NomeCliente = nome;
-            cliente.CPF = cpf;
-            cliente.Email = email;
-            cliente.DataNascimento = dataNascimento;
-            cliente.DataCadastro = dtCadastro;
+            try
+            {
+                Cliente cliente = new Cliente();
+                cliente.NomeCliente = nome;
+                cliente.CPF = cpf;
+                cliente.Email = email;
+                cliente.DataNascimento = dataNascimento;
+                cliente.DataCadastro = dtCadastro;
 
-            await _context.Clientes.AddAsync(cliente);
-            await _context.SaveChangesAsync();
-
-            return cliente;
-
+                await _context.Clientes.AddAsync(cliente);
+                await _context.SaveChangesAsync();
+                return cliente;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
         }
 
-        public async Task<dynamic> GetClienteByCpf(string cpf)
+        public async Task<Cliente> GetClienteByCpf(string cpf)
         {
-            return await _context.Clientes.FindAsync(cpf);
+            return await _context.Clientes.FirstOrDefaultAsync(x => x.CPF == cpf);
         }
 
-        public async Task<Cliente> AtualizarCliente(decimal idCliente, string nome, string cpf, string email, DateTime dataNascimento, DateTime dtCadastro)
+        public async Task<Cliente> AtualizarCliente(int idCliente, string nome, string cpf, string email, DateTime dataNascimento, DateTime dtCadastro)
         {
-            Cliente cliente = new Cliente();
-            cliente.IdCliente = idCliente;
-            cliente.NomeCliente = nome;
-            cliente.CPF = cpf;
-            cliente.Email = email;
-            cliente.DataNascimento = dataNascimento;
-            cliente.DataCadastro = dtCadastro;
+            var clienteExistente = await _context.Clientes.FindAsync(idCliente);
+            clienteExistente.NomeCliente = nome;
+            clienteExistente.CPF = cpf;
+            clienteExistente.Email = email;
+            clienteExistente.DataNascimento = dataNascimento;
+            clienteExistente.DataCadastro = dtCadastro;
 
-            await _context.Clientes.Update(cliente).ReloadAsync();
             await _context.SaveChangesAsync();
-
-            return cliente;
+            return clienteExistente;
 
         }
-        public async Task<dynamic> DeleteCliente(decimal idCliente)
+        public async Task<dynamic> DeleteCliente(int idCliente)
         {
             var cliente = await _context.Clientes.FindAsync(idCliente);
              _context.Clientes.Remove(cliente);

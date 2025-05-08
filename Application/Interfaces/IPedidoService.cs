@@ -8,10 +8,10 @@ namespace GerenciamentoDePedidosWebApi.Application.Interfaces
     public interface IPedidoService 
     {
         Task<List<Pedido>> GetAllAsync();
-        Task<Pedido> GetPedidoById(decimal idPedido);
+        Task<Pedido> GetPedidoById(int idPedido);
         Task<PedidoDto> CadastrarPedido(PedidosRequest model);
-        Task<bool> DeletarPedidoAsync(decimal idPedido);
-        Task<PedidoDto> AtualizarPedidoAsync(decimal idPedido, UpdatePedidoRequest model);
+        Task<bool> DeletarPedidoAsync(int idPedido);
+        Task<PedidoDto> AtualizarPedidoAsync(int idPedido, UpdatePedidoRequest model);
 
     }
 }

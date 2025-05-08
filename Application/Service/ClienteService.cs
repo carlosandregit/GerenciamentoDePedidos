@@ -20,7 +20,7 @@ namespace GerenciamentoDePedidosWebApi.Application.Service
             return await _clienteRepository.GetAllAsync();
         }
 
-        public async Task<Cliente> GetClienteById(decimal idCliente)
+        public async Task<Cliente> GetClienteById(int idCliente)
         {
             return await _clienteRepository.GetClienteById(idCliente);
         }
@@ -29,7 +29,7 @@ namespace GerenciamentoDePedidosWebApi.Application.Service
         {
             var mensagem = string.Empty;
             var cpf = model.CPF.Replace(".", "").Replace("-","");
-            var dtCadastro = DateTime.Now;
+            var dtCadastro = DateTime.Now;    
             var adesaoCliente = await _clienteRepository.AdesaoCliente(model.Nome, cpf, model.Email, model.DataNascimento, dtCadastro);
 
             if (adesaoCliente.IdCliente != 0)
@@ -47,14 +47,14 @@ namespace GerenciamentoDePedidosWebApi.Application.Service
             return true;
         }
 
-        public async Task<Cliente> AtualizarCliente(decimal idCliente, ClienteRequeste model)
+        public async Task<Cliente> AtualizarCliente(int idCliente, ClienteRequeste model)
         {
             var cpf = model.CPF.Replace(".", "").Replace("-", "");
             var dtCadastro = DateTime.Now;
             return await _clienteRepository.AtualizarCliente(idCliente, model.Nome, cpf, model.Email, model.DataNascimento, dtCadastro);
         }
         
-        public async Task<dynamic> DeleteCliente(decimal idCliente)
+        public async Task<dynamic> DeleteCliente(int idCliente)
         {            
             await _clienteRepository.DeleteCliente(idCliente);
             return new { success = true, message = "Cliente removido com sucesso." };

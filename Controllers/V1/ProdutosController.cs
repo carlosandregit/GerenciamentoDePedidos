@@ -55,8 +55,8 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
 
         [MapToApiVersion("1.0")]
         [Authorize]
-        [HttpPost("listar/{id}")]
-        public async Task<IActionResult> GetByIdProduto(decimal idProduto)
+        [HttpPost("listar/id")]
+        public async Task<IActionResult> GetByIdProduto(int idProduto)
         {
             try
             {
@@ -130,8 +130,8 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
         }
         [MapToApiVersion("1.0")]
         [Authorize]
-        [HttpPost("atualizar/{id}")]
-        public async Task<IActionResult> AtualizaProduto(decimal idProduto, [FromBody] ProdutoRequest model)
+        [HttpPost("atualizar/id")]
+        public async Task<IActionResult> AtualizaProduto(int idProduto, [FromBody] ProdutoRequest model)
         {
             try
             {
@@ -184,8 +184,8 @@ namespace GerenciamentoDePedidosWebApi.Controllers.V1
 
         [MapToApiVersion("1.0")]
         [Authorize]
-        [HttpPost("deletar/{id}")]
-        public async Task<IActionResult> ApagaProduto(decimal idProduto)
+        [HttpPost("deletar/id")]
+        public async Task<IActionResult> ApagaProduto(int idProduto)
         {
             try
             {
