@@ -60,8 +60,7 @@ namespace GerenciamentoDePedidosWebApi.Infrastructure.Autenticacao
         public async Task<AutenticacaoResponse> InsertUsuario(AutenticacaoRequest model)
         {
             UsuariosSistema usuario = new UsuariosSistema()
-            {
-                IdUsuario = 1,
+            {        
                 Usuario = model.Usuario,
                 Senha = model.Senha,
                 TokenAcesso = Guid.NewGuid(),
